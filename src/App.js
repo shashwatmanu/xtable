@@ -24,13 +24,14 @@ function App() {
   const [sortedData, setSortedData] = useState([]);
 
   const sortByDate = () =>{
-    let temp = data.sort((a,b)=> a.date - b.date);
-    console.log(temp)
+    let temp = [...data].sort((a,b)=> new Date(b.date) - new Date(a.date));
+    // console.log(temp)
   setSortedData(temp);
   }
   const sortByViews = () =>{
-  let temp = data.sort((a,b)=> b.views - a.views);
-  console.log(temp)
+    let some = [...data]
+  let temp = some.sort((a,b)=> b.views - a.views);
+  // console.log(temp)
   setSortedData(temp);
   }
 
